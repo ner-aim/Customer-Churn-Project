@@ -172,7 +172,7 @@ def main(args):
 if __name__ == "__main__":
     p = argparse.ArgumentParser(description="Run churn pipeline with XGBoost + MLflow")
     p.add_argument("--input", type=str, required=True,
-                   help="path to CSV (e.g., data/raw/Telco-Customer-Churn.csv)")
+                   help="path to CSV (e.g., data/raw/WA_Fn-UseC_-Telco-Customer-Churn.csv)")
     p.add_argument("--target", type=str, default="Churn")
     p.add_argument("--threshold", type=float, default=0.35)
     p.add_argument("--test_size", type=float, default=0.2)
