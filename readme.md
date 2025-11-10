@@ -41,9 +41,10 @@ It transforms messy data into actionable insight and deploys predictive intellig
 ---
 
 2️⃣ Prepare Data & Run Pipeline
+```bash
 python scripts/prepare_processed_data.py
 python scripts/run_pipeline.py
-
+```
 
 Loads, validates, and cleans data
 
