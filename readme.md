@@ -215,7 +215,7 @@ _“Patterns reveal themselves only to those patient enough to compute them.”_
 
 
 ## 🕵️ Author
-**Sid — Data Scientist**  
+**Sid - Data Scientist**  
 > *“Precision is my protest. Insight, my revolution.”*  
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-blue)](https://linkedin.com/in/yourprofile)  
