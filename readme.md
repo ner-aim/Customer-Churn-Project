@@ -90,6 +90,19 @@ Customer churn — the silent defection.
 This project identifies **which customers are likely to leave** a telecom provider using behavioral, demographic, and billing data.  
 It transforms messy data into actionable insight and deploys predictive intelligence as a scalable API.
 
+## 🔧 Setup (Local)
+
+### Prerequisites
+- Python ≥ 3.11  
+- Docker (optional for containerized deployment)  
+- pip, virtualenv, or conda  
+
+### 1️⃣ Clone & Install
+```bash
+git clone https://github.com/yourusername/Telco-Customer-Churn-ML.git
+cd Telco-Customer-Churn-ML-main
+pip install -r requirements.txt
+```
 ---
 
 ## 🧠 Models & Tracking
