@@ -224,5 +224,5 @@ _“Patterns reveal themselves only to those patient enough to compute them.”_
 ---
 
 ## ⚖️ License
-MIT License — free to use, but respect the code.  
+MIT License. free to use, but respect the code.  
 Even spies have ethics.
