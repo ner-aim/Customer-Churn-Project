@@ -19,45 +19,68 @@ Built with **Machine Learning**, **FastAPI**, **Docker**, and **MLflow**, this p
 
 ## 🗂️ Project Structure
 Telco-Customer-Churn-ML-main/
-│
 ├── README.md
+
 ├── dockerfile
+
 ├── requirements.txt
+
 ├── .github/workflows/ci.yml
-│
+
+
 ├── notebooks/
+
 │ └── EDA.ipynb
-│
+
 ├── scripts/
+
 │ ├── prepare_processed_data.py
+
 │ ├── run_pipeline.py
+
 │ ├── test_fastapi.py
+
 │ ├── test_pipeline_phase1_data_features.py
+
 │ └── test_pipeline_phase2_modeling.py
+
 │
 └── src/
+
 ├── app/
+
 │ ├── app.py
+
 │ └── main.py ← FastAPI + Gradio mounted at /ui
-│
+
 ├── data/
+
 │ ├── load_data.py
+
 │ └── preprocess.py
-│
+
 ├── features/
+
 │ └── build_features.py
-│
+
 ├── models/
+
 │ ├── train.py ← MLflow logging
+
 │ ├── tune.py
+
 │ └── evaluate.py
-│
+
 ├── serving/
+
 │ ├── inference.py ← Loads MLflow-exported model + schema
+
 │ └── model/ ← MLflow artifacts baked into Docker
-│
+
 └── utils/
+
 ├── utils.py
+
 └── validate_data.py
 
 ---
