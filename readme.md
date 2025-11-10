@@ -116,25 +116,99 @@ pip install -r requirements.txt
 
 ---
 
-2️⃣ Prepare Data & Run Pipeline
+### 2️⃣ Prepare Data & Run Pipeline
 ```bash
 python scripts/prepare_processed_data.py
 python scripts/run_pipeline.py
 ```
 
-Loads, validates, and cleans data
+-Loads, validates, and cleans data
+-Performs feature engineering
+-Trains models and logs runs to MLflow
 
-Performs feature engineering
-
-Trains models and logs runs to MLflow
-
-3️⃣ Launch MLflow UI
-export MLFLOW_TRACKING_URI="file:./mlruns"
-mlflow ui --backend-store-uri $MLFLOW_TRACKING_URI --port 5000
-
+### 3️⃣ Launch MLflow UI
+```
+export MLFLOW_TRACKING_URI="127.0.0.1:5000"
+mlflow ui --127.0.0.1 --port 5000
+```
 
 Visit http://127.0.0.1:5000
  to browse experiment results.
+
+### 🚀 Serve the Model Locally
+Run FastAPI + Gradio
+```
+uvicorn src.app.main:app --reload --host 0.0.0.0 --port 8000
+```
+
+- Gradio UI → http://127.0.0.1:8000/ui
+
+### 🐳 Docker Deployment
+Build Image
+
+```
+docker build -t telco-churn-api -f dockerfile .
+```
+
+Run Container
+```
+docker run -d -p 8000:8000 telco-churn-api
+```
+
+
+
+### 📈 Model Metrics (Illustrative)
+
+| Model         | Accuracy | ROC-AUC | Recall | Notes             |
+| ------------- | -------- | ------- | ------ | ----------------- |
+| Decision Tree | 0.74     | 0.78    | Medium | Baseline          |
+| Random Forest | 0.80     | 0.85    | High   | Balanced          |
+| XGBoost       | 0.82     | 0.87    | High   | Strong performer  |
+| LightGBM      | 0.83     | 0.88    | High   | Fast and accurate |
+
+🧮 Key Insights
+
+- Senior Citizens and month-to-month contracts are major churn drivers.
+- Electronic check payments correlate strongly with churn.
+- Tenure and multi-line services improve retention.
+- Long-term contracts = long-term loyalty.
+
+_“Patterns reveal themselves only to those patient enough to compute them.”_
+
+### 🧰 Tech Stack
+| Layer               | Tools                                      |
+| ------------------- | ------------------------------------------ |
+| Data Analysis       | Python, Pandas, NumPy, Seaborn, Matplotlib |
+| Machine Learning    | Scikit-learn, XGBoost, LightGBM            |
+| Experiment Tracking | MLflow                                     |
+| API Layer           | FastAPI, Gradio                            |
+| Deployment          | Docker                                     |
+| Environment         | Jupyter Notebook, Uvicorn                  |
+| Testing             | Pytest, GitHub Actions                     |
+
+
+### 🧩 Design Highlights
+
+- Training/Serving Consistency: serving layer loads feature schema from training (feature_columns.txt)
+
+- Unified Interface: FastAPI backend and Gradio front-end share the same inference function
+
+- MLflow Integration: every run tracked with params, metrics, and artifacts
+
+- Containerized Deployment: portable, reproducible environment baked with model artifacts
+
+### 🛣️ Roadmap
+
+- 🔍 Add SHAP/LIME explainability endpoints (/explain)
+
+- 📈 Deploy Streamlit dashboard for churn visualization
+
+- ☁️ Cloud deployment via AWS ECS / Azure App Service
+
+- ⚙️ Bayesian optimization using Optuna
+
+- 🧾 Batch inference job with Parquet input/output
+
 
 ## 🕵️ Author
 **Sid — Data Scientist**  
