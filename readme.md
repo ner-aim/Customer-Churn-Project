@@ -93,11 +93,15 @@ It transforms messy data into actionable insight and deploys predictive intellig
 ## 🔧 Setup (Local)
 
 ### Prerequisites
-- Python ≥ 3.11  
-- Docker (optional for containerized deployment)  
+
+- Python ≥ 3.11
+  
+- Docker (optional for containerized deployment)
+  
 - pip, virtualenv, or conda  
 
 ### 1️⃣ Clone & Install
+
 ```bash
 git clone https://github.com/yourusername/Telco-Customer-Churn-ML.git
 cd Telco-Customer-Churn-ML-main
