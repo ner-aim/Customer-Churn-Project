@@ -1,4 +1,4 @@
-# 🛰️ Telco Customer Churn — End-to-End ML (FastAPI • Docker • MLflow)
+# 🛰️  Customer Churn - End-to-End ML (FastAPI • Docker • MLflow)
 > *“In the theater of attrition, churn is treason. This system exposes it.”*
 
 A full pipeline to analyze telecom customer behavior and **predict churn** — who stays, who leaves, and why.  
@@ -109,7 +109,7 @@ pip install -r requirements.txt
 ```
 ---
 
-## 🧠 Models & Tracking
+### 🧠 Models & Tracking
 - **Decision Tree:** baseline interpretability  
 - **Random Forest:** ensemble reliability  
 - **XGBoost:** precision powerhouse  
@@ -170,7 +170,7 @@ docker run -d -p 8000:8000 telco-churn-api
 | XGBoost       | 0.82     | 0.87    | High   | Strong performer  |
 | LightGBM      | 0.83     | 0.88    | High   | Fast and accurate |
 
-🧮 Key Insights
+#### 🧮 Key Insights
 
 - Senior Citizens and month-to-month contracts are major churn drivers.
 - Electronic check payments correlate strongly with churn.
