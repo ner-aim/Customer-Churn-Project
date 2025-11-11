@@ -87,7 +87,7 @@ Customer-Churn-Project-main/
 ---
 
 ## 🧩 Problem Statement
-Customer churn — the silent defection.  
+Customer churn: the silent defection.  
 This project identifies **which customers are likely to leave** a telecom provider using behavioral, demographic, and billing data.  
 It transforms messy data into actionable insight and deploys predictive intelligence as a scalable API.
 
