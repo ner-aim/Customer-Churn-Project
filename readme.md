@@ -33,7 +33,7 @@ Built with **Machine Learning**, **FastAPI**, **Docker**, and **MLflow**, this p
 > *“We do not guess. We measure.”*
 
 ### Architecture Diagram
-
+```
 ┌─────────────────────────────────────────────────────────────────────┐
 │                    CUSTOMER CHURN PREDICTION SYSTEM                 │
 └─────────────────────────────────────────────────────────────────────┘
@@ -88,7 +88,7 @@ Built with **Machine Learning**, **FastAPI**, **Docker**, and **MLflow**, this p
 Key Metrics: 92.5% Recall | <10ms Latency | Dockerized | CI/CD Automated
 
 
-
+```
 ---
 
 ## 📁 Project Structure
