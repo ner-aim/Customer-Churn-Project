@@ -220,7 +220,7 @@ _“Patterns reveal themselves only to those patient enough to compute them.”_
 > *“Precision is my protest. Insight, my revolution.”*  
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-blue)](https://linkedin.com/in/pottapatri)  
-[![GitHub](https://img.shields.io/badge/GitHub-Red)](https://github.com/ner-aim)
+[![GitHub](https://img.shields.io/badge/GitHub-yellow)](https://github.com/ner-aim)
 
 ---
 
