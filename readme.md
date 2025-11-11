@@ -204,7 +204,7 @@ _“Patterns reveal themselves only to those patient enough to compute them.”_
 
 ### 🛣️ Roadmap
 
-- 🔍 Add SHAP/LIME explainability endpoints (/explain)
+- 🔍 Add SHAP/LIME explainability endpoints
 
 - 📈 Deploy Streamlit dashboard for churn visualization
 
