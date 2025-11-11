@@ -1,7 +1,7 @@
 # 🛰️  Customer Churn - End-to-End ML (FastAPI • Docker • MLflow)
 > *“In the theater of attrition, churn is treason. This system exposes it.”*
 
-A full pipeline to analyze telecom customer behavior and **predict churn** — who stays, who leaves, and why.  
+A full pipeline to analyze telecom customer behavior and **predict churn** - who stays, who leaves, and why.  
 Built with **Machine Learning**, **FastAPI**, **Docker**, and **MLflow**, this project delivers data-driven insight and deployable intelligence.
 
 ---
