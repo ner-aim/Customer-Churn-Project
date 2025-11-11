@@ -219,8 +219,8 @@ _“Patterns reveal themselves only to those patient enough to compute them.”_
 **Sid - Data Scientist**  
 > *“Precision is my protest. Insight, my revolution.”*  
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-blue)](https://linkedin.com/in/yourprofile)  
-[![GitHub](https://img.shields.io/badge/GitHub-black)](https://github.com/yourusername)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-blue)](https://linkedin.com/in/pottapatri)  
+[![GitHub](https://img.shields.io/badge/GitHub-Red)](https://github.com/ner-aim)
 
 ---
 
