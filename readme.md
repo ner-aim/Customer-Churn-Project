@@ -18,7 +18,7 @@ Built with **Machine Learning**, **FastAPI**, **Docker**, and **MLflow**, this p
 ---
 
 ## 🗂️ Project Structure
-Telco-Customer-Churn-ML-main/
+Customer-Churn-Project-main/
 ├── README.md
 
 ├── dockerfile
@@ -103,8 +103,8 @@ It transforms messy data into actionable insight and deploys predictive intellig
 ### 1️⃣ Clone & Install
 
 ```bash
-git clone https://github.com/yourusername/Telco-Customer-Churn-ML.git
-cd Telco-Customer-Churn-ML-main
+git clone https://github.com/{username}/Customer-Churn-Project.git
+cd Customer-Churn-Project-main
 pip install -r requirements.txt
 ```
 ---
@@ -151,12 +151,12 @@ uvicorn src.app.main:app --reload --host 0.0.0.0 --port 8000
 Build Image
 
 ```
-docker build -t telco-churn-api -f dockerfile .
+docker build -t churn-api -f dockerfile .
 ```
 
 Run Container
 ```
-docker run -d -p 8000:8000 telco-churn-api
+docker run -d -p 8000:8000 churn-api
 ```
 
 
