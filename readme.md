@@ -1,7 +1,7 @@
 # 🛰️  Customer Churn - End-to-End ML (FastAPI • Docker • MLflow)
 > *“In the theater of attrition, churn is treason. This system exposes it.”*
 
-A full pipeline to analyze telecom customer behavior and **predict churn** — who stays, who leaves, and why.  
+A full pipeline to analyze telecom customer behavior and **predict churn** - who stays, who leaves, and why.  
 Built with **Machine Learning**, **FastAPI**, **Docker**, and **MLflow**, this project delivers data-driven insight and deployable intelligence.
 
 ---
@@ -19,6 +19,7 @@ Built with **Machine Learning**, **FastAPI**, **Docker**, and **MLflow**, this p
 
 ## 🗂️ Project Structure
 Customer-Churn-Project-main/
+
 ├── README.md
 
 ├── dockerfile
@@ -86,7 +87,7 @@ Customer-Churn-Project-main/
 ---
 
 ## 🧩 Problem Statement
-Customer churn — the silent defection.  
+Customer churn: the silent defection.  
 This project identifies **which customers are likely to leave** a telecom provider using behavioral, demographic, and billing data.  
 It transforms messy data into actionable insight and deploys predictive intelligence as a scalable API.
 
@@ -203,7 +204,7 @@ _“Patterns reveal themselves only to those patient enough to compute them.”_
 
 ### 🛣️ Roadmap
 
-- 🔍 Add SHAP/LIME explainability endpoints (/explain)
+- 🔍 Add SHAP/LIME explainability endpoints
 
 - 📈 Deploy Streamlit dashboard for churn visualization
 
@@ -218,8 +219,8 @@ _“Patterns reveal themselves only to those patient enough to compute them.”_
 **Sid - Data Scientist**  
 > *“Precision is my protest. Insight, my revolution.”*  
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-blue)](https://linkedin.com/in/yourprofile)  
-[![GitHub](https://img.shields.io/badge/GitHub-black)](https://github.com/yourusername)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-blue)](https://linkedin.com/in/pottapatri)  
+[![GitHub](https://img.shields.io/badge/GitHub-yellow)](https://github.com/ner-aim)
 
 ---
 
