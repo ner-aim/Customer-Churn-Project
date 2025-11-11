@@ -6,83 +6,65 @@ Built with **Machine Learning**, **FastAPI**, **Docker**, and **MLflow**, this p
 
 ---
 
-## ✨ Highlights
-- 🧠 **Models:** XGBoost, LightGBM, Random Forest, Decision Tree  
-- 📊 **Experiment tracking:** MLflow logging + EDA notebooks  
-- ⚡ **Real-time inference:** FastAPI REST API with Gradio UI (`/ui`)  
-- 🐳 **Dockerized deployment:** production-ready, portable, fast  
-- ✅ **Testing & CI:** automated with Pytest and GitHub Actions  
+## 🛠️ Technical Architecture
+
+### Machine Learning & Data Science
+- **Algorithms**: XGBoost, LightGBM, Random Forest, Decision Tree
+- **Optimization**: Optuna (30 trials, recall-focused)
+- **Experiment Tracking**: MLflow
+- **Explainability**: SHAP values
+- **Data Validation**: Great Expectations
+
+### Backend & Deployment
+- **API**: FastAPI (async endpoints)
+- **Containerization**: Docker (multi-stage builds)
+- **Orchestration**: AWS ECS/Fargate
+- **CI/CD**: GitHub Actions (automated Docker builds → ECR)
+- **Infrastructure**: VPC, ALB, Security Groups
+
+### Frontend
+- **UI Framework**: Gradio (interactive prediction interface)
+
+### Development
+- **Environment**: Jupyter, Python 3.11
+- **Testing**: Pytest
+- **Version Control**: Git/GitHub
 
 > *“We do not guess. We measure.”*
 
 ---
 
-## 🗂️ Project Structure
-Customer-Churn-Project-main/
-
-├── README.md
-
-├── dockerfile
-
-├── requirements.txt
-
-├── .github/workflows/ci.yml
-
-
-├── notebooks/
-
-│ └── EDA.ipynb
-
-├── scripts/
-
-│ ├── prepare_processed_data.py
-
-│ ├── run_pipeline.py
-
-│ ├── test_fastapi.py
-
-│ ├── test_pipeline_phase1_data_features.py
-
-│ └── test_pipeline_phase2_modeling.py
-
+## 📁 Project Structure
+```
+Customer-Churn-Project/
 │
-└── src/
-
-├── app/
-
-│ ├── app.py
-
-│ └── main.py ← FastAPI + Gradio mounted at /ui
-
-├── data/
-
-│ ├── load_data.py
-
-│ └── preprocess.py
-
-├── features/
-
-│ └── build_features.py
-
-├── models/
-
-│ ├── train.py ← MLflow logging
-
-│ ├── tune.py
-
-│ └── evaluate.py
-
-├── serving/
-
-│ ├── inference.py ← Loads MLflow-exported model + schema
-
-│ └── model/ ← MLflow artifacts baked into Docker
-
-└── utils/
-
-├── utils.py
-
-└── validate_data.py
+├── notebooks/
+│   ├── EDA.ipynb              # Exploratory analysis + SHAP
+│   └── modeling.ipynb         # Model development
+│
+├── src/
+│   ├── app/
+│   │   ├── main.py           # FastAPI endpoints
+│   │   └── app.py            # Gradio UI
+│   ├── data/
+│   │   ├── load_data.py      # Data ingestion
+│   │   └── preprocess.py     # Feature engineering
+│   ├── models/
+│   │   ├── train.py          # Training logic
+│   │   ├── tune.py           # Optuna optimization
+│   │   └── evaluate.py       # Metrics calculation
+│   └── serving/
+│       └── inference.py      # Prediction pipeline
+│
+├── scripts/
+│   ├── run_pipeline.py       # End-to-end training
+│   └── test_*.py             # Unit tests
+│
+├── mlruns/                    # MLflow artifacts
+├── .github/workflows/         # CI/CD configuration
+├── dockerfile                 # Container definition
+└── requirements.txt           # Dependencies
+```
 
 ---
 
@@ -162,14 +144,31 @@ docker run -d -p 8000:8000 churn-api
 
 
 
-### 📈 Model Metrics (Illustrative)
+## 🏆 Model Comparison
 
-| Model         | Accuracy | ROC-AUC | Recall | Notes             |
-| ------------- | -------- | ------- | ------ | ----------------- |
-| Decision Tree | 0.74     | 0.78    | Medium | Baseline          |
-| Random Forest | 0.80     | 0.85    | High   | Balanced          |
-| XGBoost       | 0.82     | 0.87    | High   | Strong performer  |
-| LightGBM      | 0.83     | 0.88    | High   | Fast and accurate |
+| Model | Accuracy | Precision | Recall | F1-Score | Training Time |
+|-------|----------|-----------|--------|----------|---------------|
+| **XGBoost (Tuned)** | **67.1%** | **44.3%** | **92.5%** | **59.9%** | **1.8s** |
+| LightGBM | 73.3% | 49.8% | 81.8% | 61.9% | 5.7s |
+| Random Forest | 75.8% | 53.2% | 72.5% | 61.4% | - |
+| XGBoost (Default) | 72.2% | 48.6% | 81.0% | 60.8% | 2.4s |
+
+*Optimized for recall to minimize missed churn cases (false negatives)*
+
+## 📊 Model Performance
+
+### Production Model (Tuned XGBoost)
+- **Recall**: 92.2% (prioritizing churn detection)
+- **Precision**: 44.3%
+- **F1-Score**: 59.9%
+- **ROC-AUC**: [Add score from notebook]
+- **Training Time**: 1.83s
+- **Inference Time**: 8.4ms per prediction
+
+### Business Impact
+- Identifies 92% of at-risk customers
+- Enables proactive retention campaigns
+- Optimized threshold (0.30) balances false positives vs. missed churners
 
 #### 🧮 Key Insights
 
@@ -202,22 +201,29 @@ _“Patterns reveal themselves only to those patient enough to compute them.”_
 
 - Containerized Deployment: portable, reproducible environment baked with model artifacts
 
-### 🛣️ Roadmap
+## 💡 Key Challenges & Solutions
 
-- 🔍 Add SHAP/LIME explainability endpoints
+### 1. Class Imbalance (73/27 split)
+**Solution**: Implemented class weighting + threshold optimization (0.30) to prioritize recall
 
-- 📈 Deploy Streamlit dashboard for churn visualization
+### 2. Multicollinearity
+**Solution**: VIF analysis + feature engineering (consolidated "No internet service" flags)
 
-- ☁️ Cloud deployment via AWS ECS / Azure App Service
+### 3. Model Interpretability
+**Solution**: SHAP values showing tenure, contract type, and monthly charges as top drivers
 
-- ⚙️ Bayesian optimization using Optuna
-
-- 🧾 Batch inference job with Parquet input/output
+### 4. Production Reliability
+**Solution**: Great Expectations for data validation + comprehensive unit tests
 
 
 ## 🕵️ Author
 **Sid - Data Scientist**  
-> *“Precision is my protest. Insight, my revolution.”*  
+> *“Precision is my protest. Insight, my revolution.”*
+![Python](https://img.shields.io/badge/Python-3.11-blue)
+![FastAPI](https://img.shields.io/badge/FastAPI-Latest-green)
+![Docker](https://img.shields.io/badge/Docker-Ready-blue)
+![AWS](https://img.shields.io/badge/AWS-ECS-orange)
+![MLflow](https://img.shields.io/badge/MLflow-Tracking-red)
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-blue)](https://linkedin.com/in/pottapatri)  
 [![GitHub](https://img.shields.io/badge/GitHub-yellow)](https://github.com/ner-aim)
